@@ -1,5 +1,9 @@
 .
 ├── app
+│   ├── components
+│   │   └── landing-page.tsx
+│   ├── dashboard
+│   │   └── page.tsx
 │   ├── favicon.ico
 │   ├── globals.css
 │   ├── layout.tsx
@@ -20,4 +24,4 @@
 ├── structure.md
 └── tsconfig.json
 
-3 directories, 18 files
+5 directories, 20 files

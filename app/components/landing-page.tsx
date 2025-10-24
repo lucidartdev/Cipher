@@ -1,5 +1,8 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useRouter } from 'next/navigation';
+import { useAccount } from 'wagmi';
 import {
    Shield,
    Eye,
@@ -13,6 +16,8 @@ import {
 } from "lucide-react";
 
 export default function CipherLanding() {
+   const router = useRouter();
+   const { isConnected } = useAccount();
    const [isChatOpen, setIsChatOpen] = useState(false);
    const [messages, setMessages] = useState([
       {
@@ -21,6 +26,13 @@ export default function CipherLanding() {
       },
    ]);
    const [inputValue, setInputValue] = useState("");
+
+   // 🔥 AUTO REDIRECT: When wallet connects, go to dashboard
+   useEffect(() => {
+      if (isConnected) {
+         router.push('/dashboard');
+      }
+   }, [isConnected, router]);
 
    const handleSendMessage = () => {
       if (!inputValue.trim()) return;
@@ -56,6 +68,9 @@ export default function CipherLanding() {
                style={{ animationDelay: "2s" }}></div>
          </div>
 
+        
+      
+
          {/* Content Container */}
          <div className="relative z-10">
             {/* Navigation */}
@@ -69,27 +84,40 @@ export default function CipherLanding() {
                   </span>
                </div>
 
-               <div className="hidden md:flex items-center space-x-8">
-                  <a
-                     href="#features"
-                     className="text-gray-600 hover:text-[#0b5313] transition-colors font-medium">
-                     Features
-                  </a>
-                  <a
-                     href="#security"
-                     className="text-gray-600 hover:text-[#0b5313] transition-colors font-medium">
-                     Security
-                  </a>
-                  <a
-                     href="#about"
-                     className="text-gray-600 hover:text-[#0b5313] transition-colors font-medium">
-                     FAQ
-                  </a>
-               </div>
+               <div className="flex items-center gap-3">
+                  {/* Dashboard Link - Only shows when connected */}
+                  {isConnected && (
+                     <button
+                        onClick={() => router.push('/dashboard')}
+                        className="bg-white border-2 border-[#65e472] text-[#0b5313] px-4 py-2 rounded-xl font-semibold hover:bg-[#65e472] hover:text-white transition-all duration-300 transform hover:scale-105"
+                     >
+                        Dashboard
+                     </button>
+                  )}
 
-               <button className="bg-linear-to-r from-[#65e472] to-[#0b5313] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#65e472]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5">
-                  Connect Wallet
-               </button>
+                  {/* Connect Wallet Button */}
+                  <ConnectButton.Custom>
+                     {({
+                        account,
+                        chain,
+                        openAccountModal,
+                        openChainModal,
+                        openConnectModal,
+                        mounted,
+                     }) => {
+                        const connected = mounted && account && chain;
+                        
+                        return (
+                           <button
+                              onClick={connected ? openAccountModal : openConnectModal}
+                              className="bg-linear-to-r from-[#65e472] to-[#0b5313] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#65e472]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
+                           >
+                              {connected ? `${account.displayName}` : 'Connect Wallet'}
+                           </button>
+                        );
+                     }}
+                  </ConnectButton.Custom>
+               </div>
             </nav>
 
             {/* Hero Section */}
@@ -122,12 +150,23 @@ export default function CipherLanding() {
 
                   {/* CTA Buttons */}
                   <div className="flex col sm:row items-center justify-center gap-4 mb-12">
-                     <button className="bg-linear-to-r from-[#65e472] to-[#0b5313] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#65e472]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group">
-                        Get Started for Free
-                        <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
-                           →
-                        </span>
-                     </button>
+                     <ConnectButton.Custom>
+                        {({ openConnectModal, mounted, account }) => {
+                           const connected = mounted && account;
+                           
+                           return (
+                              <button 
+                                 onClick={connected ? () => router.push('/dashboard') : openConnectModal}
+                                 className="bg-linear-to-r from-[#65e472] to-[#0b5313] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#65e472]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
+                              >
+                                 {connected ? 'Go to Dashboard' : 'Get Started for Free'}
+                                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
+                                    →
+                                 </span>
+                              </button>
+                           );
+                        }}
+                     </ConnectButton.Custom>
                      <button className="bg-white border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:border-[#65e472] hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
                         Watch Demo
                      </button>
@@ -196,6 +235,8 @@ export default function CipherLanding() {
                      </div>
                   </div>
                </div>
+           
+
             </div>
 
             {/* Features Section */}
@@ -292,19 +333,14 @@ export default function CipherLanding() {
             {/* Stats Section */}
             <div className="container mx-auto px-6 py-20">
                <div className="max-w-4xl mx-auto">
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
                      <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
                         <div className="text-4xl font-bold text-[#65e472] mb-2">
-                           12K+
+                           20+
                         </div>
-                        <div className="text-gray-600">Wallets Analyzed</div>
+                        <div className="text-gray-600">Wallets Compatible</div>
                      </div>
-                     <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
-                        <div className="text-4xl font-bold text-[#65e472] mb-2">
-                           $2M+
-                        </div>
-                        <div className="text-gray-600">Gas Saved</div>
-                     </div>
+                   
                      <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
                         <div className="text-4xl font-bold text-[#65e472] mb-2">
                            100%
@@ -352,8 +388,8 @@ export default function CipherLanding() {
          </button>
 
          {/* Chat Window */}
-         {isChatOpen && (
-            <div className="fixed bottom-24 right-6 w-160 h-[500px] bg-white border-2 border-gray-200 rounded-2xl shadow-2xl z-50 flex col overflow-hidden">
+       {isChatOpen && (
+            <div className="fixed bottom-24 right-6 w-160 h-[500px] bg-white border-2 border-gray-200 rounded-2xl shadow-2xl z-50 grid overflow-hidden">
                {/* Chat Header */}
                <div className="bg-linear-to-r from-[#65e472] to-[#0b5313] p-4 flex items-center justify-between">
                   <div className="flex items-center space-x-3">
