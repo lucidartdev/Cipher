@@ -190,51 +190,69 @@ export default function CipherLanding() {
                </div>
 
                {/* Floating Cards Preview */}
-               <div className="max-w-6xl mx-auto mt-20 relative">
-                  <div className="grid md:grid-cols-3 gap-6">
-                     {/* Card 1 */}
-                     <div className="group bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#65e472] hover:shadow-2xl hover:shadow-[#65e472]/10 transition-all duration-300 hover:scale-105 hover:-translate-y-2 cursor-pointer">
-                        <div className="w-12 h-12 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-[#65e472]/20">
-                           <TrendingUp className="w-6 h-6 text-white" />
-                        </div>
-                        <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                           Gas Tracking
-                        </h3>
-                        <p className="text-gray-600">
-                           Monitor your transaction fees and optimize your
-                           spending patterns in real-time.
-                        </p>
-                     </div>
+      <div className="max-w-6xl mx-auto mt-20 relative ">
+  <div className="grid md:grid-cols-3 gap-6">
+    {/* Card 1 */}
+    <div className="relative p-1">
+      {/* Frosted glass backdrop - larger than card */}
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-lg rounded-2xl transform scale-105 shadow-2xl shadow-black/30"></div>
+      
+      {/* Actual card */}
+      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-xl shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <img src="/assets/Gas.png" alt="Gas Tracking" className="w-12 h-12 object-contain" />
+        </div>
+        <h3 className="text-xl font-semibold mb-2 text-gray-900">
+          Gas Tracking
+        </h3>
+        <p className="text-gray-600">
+          Monitor your transaction fees and optimize your
+          spending patterns in real-time.
+        </p>
+      </div>
+    </div>
 
-                     {/* Card 2 */}
-                     <div className="group bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#65e472] hover:shadow-2xl hover:shadow-[#65e472]/10 transition-all duration-300 hover:scale-105 hover:-translate-y-2 cursor-pointer">
-                        <div className="w-12 h-12 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-[#65e472]/20">
-                           <Shield className="w-6 h-6 text-white" />
-                        </div>
-                        <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                           Risk Detection
-                        </h3>
-                        <p className="text-gray-600">
-                           Identify dangerous token approvals and protect
-                           yourself from potential exploits.
-                        </p>
-                     </div>
+    {/* Card 2 */}
+    <div className="relative p-1">
+      {/* Frosted glass backdrop - larger than card */}
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-lg rounded-2xl transform scale-105 shadow-2xl shadow-black/30"></div>
+      
+      {/* Actual card */}
+      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-xl shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <img src="/assets/Warning.png" alt="Risk Detection" className="w-12 h-12 object-contain" />
+        </div>
+        <h3 className="text-xl font-semibold mb-2 text-gray-900">
+          Risk Detection
+        </h3>
+        <p className="text-gray-600">
+          Identify dangerous token approvals and protect
+          yourself from potential exploits.
+        </p>
+      </div>
+    </div>
 
-                     {/* Card 3 */}
-                     <div className="group bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#65e472] hover:shadow-2xl hover:shadow-[#65e472]/10 transition-all duration-300 hover:scale-105 hover:-translate-y-2 cursor-pointer">
-                        <div className="w-12 h-12 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-[#65e472]/20">
-                           <Activity className="w-6 h-6 text-white" />
-                        </div>
-                        <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                           Activity Insights
-                        </h3>
-                        <p className="text-gray-600">
-                           Understand your transaction history with
-                           human-readable summaries and visualizations.
-                        </p>
-                     </div>
-                  </div>
-               </div>
+    {/* Card 3 */}
+    <div className="relative p-1">
+      {/* Frosted glass backdrop - larger than card */}
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-lg rounded-2xl transform scale-105 shadow-2xl shadow-black/30"></div>
+      
+      {/* Actual card */}
+      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-xl shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <img src="/assets/Avtivity.png" alt="Activity Insights" className="w-12 h-12 object-contain" />
+        </div>
+        <h3 className="text-xl font-semibold mb-2 text-gray-900">
+          Activity Insights
+        </h3>
+        <p className="text-gray-600">
+          Understand your transaction history with
+          human-readable summaries and visualizations.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
            
 
             </div>
