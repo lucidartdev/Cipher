@@ -27,7 +27,7 @@ export default function CipherLanding() {
    ]);
    const [inputValue, setInputValue] = useState("");
 
-   // 🔥 AUTO REDIRECT: When wallet connects, go to dashboard
+   
    useEffect(() => {
       if (isConnected) {
          router.push('/dashboard');
@@ -191,20 +191,20 @@ export default function CipherLanding() {
 
                {/* Floating Cards Preview */}
       <div className="max-w-6xl mx-auto mt-20 relative ">
-  <div className="grid md:grid-cols-3 gap-6">
+  <div className="grid md:grid-cols-3 gap-8">
     {/* Card 1 */}
     <div className="relative p-1">
       {/* Frosted glass backdrop - larger than card */}
-      <div className="absolute inset-0 bg-white/20 backdrop-blur-lg rounded-2xl transform scale-105 shadow-2xl shadow-black/30"></div>
+      <div className="absolute inset-0 bg-[#65e472]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-2xl shadow-black/20"></div>
       
       {/* Actual card */}
-      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-xl shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <img src="/assets/Gas.png" alt="Gas Tracking" className="w-12 h-12 object-contain" />
-        </div>
-        <h3 className="text-xl font-semibold mb-2 text-gray-900">
-          Gas Tracking
-        </h3>
+      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+        <div className="mb-6 group-hover:scale-110 group-hover:rotate-9 transition-all duration-500 flex align-center justify-center">
+        <img src="/assets/Gas.png" alt="Gas Tracking" className="w-36 h-36 object-contain" />
+      </div>
+      <h3 className="text-2xl font-bold mb-3 text-gray-900">
+        Gas Tracking
+      </h3>
         <p className="text-gray-600">
           Monitor your transaction fees and optimize your
           spending patterns in real-time.
@@ -215,17 +215,17 @@ export default function CipherLanding() {
     {/* Card 2 */}
     <div className="relative p-1">
       {/* Frosted glass backdrop - larger than card */}
-      <div className="absolute inset-0 bg-white/20 backdrop-blur-lg rounded-2xl transform scale-105 shadow-2xl shadow-black/30"></div>
+      <div className="absolute inset-0  bg-[#65e472]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-xl shadow-black/20"></div>
       
       {/* Actual card */}
-      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-xl shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <img src="/assets/Warning.png" alt="Risk Detection" className="w-12 h-12 object-contain" />
-        </div>
+      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+           <div className="mb-6 group-hover:scale-110 group-hover:rotate-9 transition-all duration-500 flex align-center justify-center">
+        <img src="/assets/Warning.png" alt="Risk Detection" className="w-36 h-36 object-contain" />
+      </div>
         <h3 className="text-xl font-semibold mb-2 text-gray-900">
           Risk Detection
         </h3>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-base">
           Identify dangerous token approvals and protect
           yourself from potential exploits.
         </p>
@@ -235,17 +235,17 @@ export default function CipherLanding() {
     {/* Card 3 */}
     <div className="relative p-1">
       {/* Frosted glass backdrop - larger than card */}
-      <div className="absolute inset-0 bg-white/20 backdrop-blur-lg rounded-2xl transform scale-105 shadow-2xl shadow-black/30"></div>
+      <div className="absolute inset-0  bg-[#65e472]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-xl shadow-black/20"></div>
       
       {/* Actual card */}
-      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-xl shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <img src="/assets/Avtivity.png" alt="Activity Insights" className="w-12 h-12 object-contain" />
-        </div>
-        <h3 className="text-xl font-semibold mb-2 text-gray-900">
+      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+       <div className="mb-6 group-hover:scale-110 group-hover:rotate-9 transition-all duration-500 flex align-center justify-center">
+        <img src="/assets/Avtivity.png" alt="Activity Insights" className="w-36 h-36 object-contain" />
+      </div>
+        <h3 className="text-2xl font-bold mb-3 text-gray-900">
           Activity Insights
         </h3>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-base">
           Understand your transaction history with
           human-readable summaries and visualizations.
         </p>
