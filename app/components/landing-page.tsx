@@ -59,12 +59,12 @@ export default function CipherLanding() {
 
          {/* linear Orbs */}
          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 -left-20 w-96 h-96 bg-[#65e472] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+            <div className="absolute top-20 -left-20 w-96 h-96 bg-[#023697] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
             <div
-               className="absolute top-40 -right-20 w-96 h-96 bg-[#0b5313] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
+               className="absolute top-40 -right-20 w-96 h-96 bg-[#001d51] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
                style={{ animationDelay: "1s" }}></div>
             <div
-               className="absolute -bottom-32 left-1/3 w-96 h-96 bg-[#65e472] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
+               className="absolute -bottom-32 left-1/3 w-96 h-96 bg-[#023697] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
                style={{ animationDelay: "2s" }}></div>
          </div>
 
@@ -76,7 +76,7 @@ export default function CipherLanding() {
             {/* Navigation */}
             <nav className="container mx-auto px-6 py-6 flex items-center justify-between border-b border-gray-100">
                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-xl flex items-center justify-center shadow-lg shadow-[#65e472]/20">
+                  <div className="w-10 h-10 bg-linear-to-br from-[#023697] to-[#001d51] rounded-xl flex items-center justify-center shadow-lg shadow-[#023697]/20">
                      <span className="text-xl font-bold text-white">C</span>
                   </div>
                   <span className="text-2xl font-bold text-gray-900">
@@ -89,7 +89,7 @@ export default function CipherLanding() {
                   {isConnected && (
                      <button
                         onClick={() => router.push('/dashboard')}
-                        className="bg-white border-2 border-[#65e472] text-[#0b5313] px-4 py-2 rounded-xl font-semibold hover:bg-[#65e472] hover:text-white transition-all duration-300 transform hover:scale-105"
+                        className="bg-white border-2 border-[#023697] text-[#001d51] px-4 py-2 rounded-xl font-semibold hover:bg-[#023697] hover:text-white transition-all duration-300 transform hover:scale-105"
                      >
                         Dashboard
                      </button>
@@ -110,7 +110,7 @@ export default function CipherLanding() {
                         return (
                            <button
                               onClick={connected ? openAccountModal : openConnectModal}
-                              className="bg-linear-to-r from-[#65e472] to-[#0b5313] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#65e472]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
+                              className="bg-linear-to-r from-[#023697] to-[#001d51] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#023697]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
                            >
                               {connected ? `${account.displayName}` : 'Connect Wallet'}
                            </button>
@@ -121,11 +121,18 @@ export default function CipherLanding() {
             </nav>
 
             {/* Hero Section */}
-            <div className="container mx-auto px-6 pt-20 pb-32">
+           <div className="relative">
+  {/* Pattern background */}
+ <div className="absolute z-[-99] inset-0 opacity-15 bg-white" style={{
+    backgroundImage: 'radial-gradient(#023697 1.65px, transparent 1.65px), radial-gradient(#023697 1.65px, #ffffff 1.65px)',
+    backgroundSize: '66px 66px',
+    backgroundPosition: '0 0, 33px 33px'
+  }}></div>
+  <div className="container mx-auto px-6 pt-20 pb-32">
                <div className="max-w-5xl mx-auto text-center">
                   {/* Badge */}
-                  <div className="inline-flex items-center space-x-2 bg-linear-to-r from-[#65e472]/10 to-[#0b5313]/10 border border-[#65e472]/20 rounded-full px-4 py-2 mb-8 hover:shadow-lg hover:shadow-[#65e472]/10 transition-all duration-300">
-                     <span className="w-2 h-2 bg-[#65e472] rounded-full animate-pulse"></span>
+                  <div className="inline-flex items-center space-x-2 bg-linear-to-r from-[#023697]/10 to-[#001d51]/10 border border-[#023697]/20 rounded-full px-4 py-2 mb-8 hover:shadow-lg hover:shadow-[#023697]/10 transition-all duration-300">
+                     <span className="w-2 h-2 bg-[#023697] rounded-full animate-pulse"></span>
                      <span className="text-sm text-gray-700 font-medium">
                         World's First Privacy-First Crypto Wallet Analyzer
                      </span>
@@ -133,9 +140,10 @@ export default function CipherLanding() {
 
                   {/* Main Headline */}
                   <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
-                     Your Wallet's
+                     
+                     
                      <br />
-                     <span className="bg-linear-to-r from-[#65e472] via-[#0b5313] to-[#65e472] bg-clip-text text-transparent">
+                     <span className="bg-linear-to-r from-[#023697] via-[#001d51] to-[#023697] bg-clip-text text-transparent">
                         Personal Analyst
                      </span>
                   </h1>
@@ -157,7 +165,7 @@ export default function CipherLanding() {
                            return (
                               <button 
                                  onClick={connected ? () => router.push('/dashboard') : openConnectModal}
-                                 className="bg-linear-to-r from-[#65e472] to-[#0b5313] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#65e472]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
+                                 className="bg-linear-to-r from-[#023697] to-[#001d51] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#023697]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
                               >
                                  {connected ? 'Go to Dashboard' : 'Get Started for Free'}
                                  <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
@@ -167,23 +175,23 @@ export default function CipherLanding() {
                            );
                         }}
                      </ConnectButton.Custom>
-                     <button className="bg-white border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:border-[#65e472] hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
+                     <button className="bg-white border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:border-[#023697] hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
                         Watch Demo
                      </button>
                   </div>
 
                   {/* Trust Indicators */}
                   <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
-                     <div className="flex items-center space-x-2 hover:text-[#0b5313] transition-colors cursor-pointer">
-                        <Shield className="w-4 h-4 text-[#65e472]" />
+                     <div className="flex items-center space-x-2 hover:text-[#001d51] transition-colors cursor-pointer">
+                        <Shield className="w-4 h-4 text-[#023697]" />
                         <span className="font-medium">Zero-Knowledge</span>
                      </div>
-                     <div className="flex items-center space-x-2 hover:text-[#0b5313] transition-colors cursor-pointer">
-                        <Lock className="w-4 h-4 text-[#65e472]" />
+                     <div className="flex items-center space-x-2 hover:text-[#001d51] transition-colors cursor-pointer">
+                        <Lock className="w-4 h-4 text-[#023697]" />
                         <span className="font-medium">Client-Side Only</span>
                      </div>
-                     <div className="flex items-center space-x-2 hover:text-[#0b5313] transition-colors cursor-pointer">
-                        <Eye className="w-4 h-4 text-[#65e472]" />
+                     <div className="flex items-center space-x-2 hover:text-[#001d51] transition-colors cursor-pointer">
+                        <Eye className="w-4 h-4 text-[#023697]" />
                         <span className="font-medium">100% Transparent</span>
                      </div>
                   </div>
@@ -191,18 +199,18 @@ export default function CipherLanding() {
 
                {/* Floating Cards Preview */}
       <div className="max-w-6xl mx-auto mt-20 relative ">
-  <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid md:grid-cols-3 gap-12">
     {/* Card 1 */}
     <div className="relative p-1">
       {/* Frosted glass backdrop - larger than card */}
-      <div className="absolute inset-0 bg-[#65e472]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-2xl shadow-black/20"></div>
+      <div className="absolute inset-0 bg-[#023697]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-2xl shadow-black/20"></div>
       
       {/* Actual card */}
-      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+      <div className="relative group h-[40vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#023697]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
         <div className="mb-6 group-hover:scale-110 group-hover:rotate-9 transition-all duration-500 flex align-center justify-center">
         <img src="/assets/Gas.png" alt="Gas Tracking" className="w-36 h-36 object-contain" />
       </div>
-      <h3 className="text-2xl font-bold mb-3 text-gray-900">
+      <h3 className="text-2xl font-bold mb-3 text-transparent bg-linear-to-r from-[#023697] via-[#001d51] to-[#023697] bg-clip-text">
         Gas Tracking
       </h3>
         <p className="text-gray-600">
@@ -215,14 +223,14 @@ export default function CipherLanding() {
     {/* Card 2 */}
     <div className="relative p-1">
       {/* Frosted glass backdrop - larger than card */}
-      <div className="absolute inset-0  bg-[#65e472]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-xl shadow-black/20"></div>
+      <div className="absolute inset-0  bg-[#023697]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-xl shadow-black/20"></div>
       
       {/* Actual card */}
-      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+      <div className="relative group h-[40vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#023697]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
            <div className="mb-6 group-hover:scale-110 group-hover:rotate-9 transition-all duration-500 flex align-center justify-center">
         <img src="/assets/Warning.png" alt="Risk Detection" className="w-36 h-36 object-contain" />
       </div>
-        <h3 className="text-xl font-semibold mb-2 text-gray-900">
+        <h3 className="text-2xl font-bold mb-3 text-transparent bg-linear-to-r from-[#023697] via-[#001d51] to-[#023697] bg-clip-text">
           Risk Detection
         </h3>
         <p className="text-gray-600 text-base">
@@ -235,14 +243,14 @@ export default function CipherLanding() {
     {/* Card 3 */}
     <div className="relative p-1">
       {/* Frosted glass backdrop - larger than card */}
-      <div className="absolute inset-0  bg-[#65e472]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-xl shadow-black/20"></div>
+      <div className="absolute inset-0  bg-[#023697]/10 backdrop-blur-md rounded-2xl transform scale-105 shadow-xl shadow-black/20"></div>
       
       {/* Actual card */}
-      <div className="relative group h-[45vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#65e472]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+      <div className="relative group h-[40vh] bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-lg shadow-black/20 hover:bg-[#023697]/5 hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
        <div className="mb-6 group-hover:scale-110 group-hover:rotate-9 transition-all duration-500 flex align-center justify-center">
         <img src="/assets/Avtivity.png" alt="Activity Insights" className="w-36 h-36 object-contain" />
       </div>
-        <h3 className="text-2xl font-bold mb-3 text-gray-900">
+        <h3 className="text-2xl font-bold mb-3 text-transparent bg-linear-to-r from-[#023697] via-[#001d51] to-[#023697] bg-clip-text">
           Activity Insights
         </h3>
         <p className="text-gray-600 text-base">
@@ -255,7 +263,7 @@ export default function CipherLanding() {
 </div>
            
 
-            </div>
+            </div></div>
 
             {/* Features Section */}
             <div
@@ -265,7 +273,7 @@ export default function CipherLanding() {
                   <div className="text-center mb-16">
                      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
                         Why Choose{" "}
-                        <span className="text-[#65e472]">CIPHER</span>?
+                        <span className="text-[#023697]">CIPHER</span>?
                      </h2>
                      <p className="text-gray-600 text-lg">
                         Your data stays yours. Forever.
@@ -273,9 +281,9 @@ export default function CipherLanding() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-8">
-                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#65e472] hover:shadow-xl hover:shadow-[#65e472]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
+                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#023697] hover:shadow-xl hover:shadow-[#023697]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
                         <div className="flex items-start space-x-4">
-                           <div className="w-10 h-10 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#65e472]/20">
+                           <div className="w-10 h-10 bg-linear-to-br from-[#023697] to-[#001d51] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#023697]/20">
                               <Lock className="w-5 h-5 text-white" />
                            </div>
                            <div>
@@ -291,9 +299,9 @@ export default function CipherLanding() {
                         </div>
                      </div>
 
-                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#65e472] hover:shadow-xl hover:shadow-[#65e472]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
+                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#023697] hover:shadow-xl hover:shadow-[#023697]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
                         <div className="flex items-start space-x-4">
-                           <div className="w-10 h-10 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#65e472]/20">
+                           <div className="w-10 h-10 bg-linear-to-br from-[#023697] to-[#001d51] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#023697]/20">
                               <Zap className="w-5 h-5 text-white" />
                            </div>
                            <div>
@@ -309,9 +317,9 @@ export default function CipherLanding() {
                         </div>
                      </div>
 
-                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#65e472] hover:shadow-xl hover:shadow-[#65e472]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
+                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#023697] hover:shadow-xl hover:shadow-[#023697]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
                         <div className="flex items-start space-x-4">
-                           <div className="w-10 h-10 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#65e472]/20">
+                           <div className="w-10 h-10 bg-linear-to-br from-[#023697] to-[#001d51] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#023697]/20">
                               <Activity className="w-5 h-5 text-white" />
                            </div>
                            <div>
@@ -327,9 +335,9 @@ export default function CipherLanding() {
                         </div>
                      </div>
 
-                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#65e472] hover:shadow-xl hover:shadow-[#65e472]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
+                     <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#023697] hover:shadow-xl hover:shadow-[#023697]/10 transition-all duration-300 hover:scale-105 cursor-pointer">
                         <div className="flex items-start space-x-4">
-                           <div className="w-10 h-10 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#65e472]/20">
+                           <div className="w-10 h-10 bg-linear-to-br from-[#023697] to-[#001d51] rounded-lg flex items-center justify-center shrink-0 shadow-lg shadow-[#023697]/20">
                               <Shield className="w-5 h-5 text-white" />
                            </div>
                            <div>
@@ -353,20 +361,20 @@ export default function CipherLanding() {
                <div className="max-w-4xl mx-auto">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
                      <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
-                        <div className="text-4xl font-bold text-[#65e472] mb-2">
+                        <div className="text-4xl font-bold text-[#023697] mb-2">
                            20+
                         </div>
                         <div className="text-gray-600">Wallets Compatible</div>
                      </div>
                    
                      <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
-                        <div className="text-4xl font-bold text-[#65e472] mb-2">
+                        <div className="text-4xl font-bold text-[#023697] mb-2">
                            100%
                         </div>
                         <div className="text-gray-600">Privacy Guaranteed</div>
                      </div>
                      <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
-                        <div className="text-4xl font-bold text-[#65e472] mb-2">
+                        <div className="text-4xl font-bold text-[#023697] mb-2">
                            24/7
                         </div>
                         <div className="text-gray-600">AI Support</div>
@@ -379,7 +387,7 @@ export default function CipherLanding() {
             <footer className="container mx-auto px-6 py-12 border-t border-gray-100">
                <div className="flex col md:row items-center justify-between">
                   <div className="flex items-center space-x-3 mb-4 md:mb-0">
-                     <div className="w-8 h-8 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-lg flex items-center justify-center shadow-lg shadow-[#65e472]/20">
+                     <div className="w-8 h-8 bg-linear-to-br from-[#023697] to-[#001d51] rounded-lg flex items-center justify-center shadow-lg shadow-[#023697]/20">
                         <span className="text-lg font-bold text-white">C</span>
                      </div>
                      <span className="text-xl font-bold text-gray-900">
@@ -397,7 +405,7 @@ export default function CipherLanding() {
          {/* Floating Chat Button */}
          <button
             onClick={() => setIsChatOpen(!isChatOpen)}
-            className="fixed bottom-6 right-6 w-14 h-14 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-full flex items-center justify-center shadow-2xl shadow-[#65e472]/40 hover:scale-110 transition-all duration-300 z-50 group">
+            className="fixed bottom-6 right-6 w-14 h-14 bg-linear-to-br from-[#023697] to-[#001d51] rounded-full flex items-center justify-center shadow-2xl shadow-[#023697]/40 hover:scale-110 transition-all duration-300 z-50 group">
             {isChatOpen ? (
                <X className="w-6 h-6 text-white" />
             ) : (
@@ -409,10 +417,10 @@ export default function CipherLanding() {
        {isChatOpen && (
             <div className="fixed bottom-24 right-6 w-160 h-[500px] bg-white border-2 border-gray-200 rounded-2xl shadow-2xl z-50 grid overflow-hidden">
                {/* Chat Header */}
-               <div className="bg-linear-to-r from-[#65e472] to-[#0b5313] p-4 flex items-center justify-between">
+               <div className="bg-linear-to-r from-[#023697] to-[#001d51] p-4 flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <span className="text-lg font-bold bg-linear-to-r from-[#65e472] to-[#0b5313] bg-clip-text text-transparent">
+                        <span className="text-lg font-bold bg-linear-to-r from-[#023697] to-[#001d51] bg-clip-text text-transparent">
                            C
                         </span>
                      </div>
@@ -438,7 +446,7 @@ export default function CipherLanding() {
                         <div
                            className={`max-w-[80%] p-3 rounded-2xl ${
                               msg.type === "user"
-                                 ? "bg-linear-to-r from-[#65e472] to-[#0b5313] text-white"
+                                 ? "bg-linear-to-r from-[#023697] to-[#001d51] text-white"
                                  : "bg-gray-100 text-gray-900"
                            }`}>
                            {msg.text}
@@ -458,11 +466,11 @@ export default function CipherLanding() {
                            e.key === "Enter" && handleSendMessage()
                         }
                         placeholder="Ask me anything..."
-                        className="1 px-4 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#65e472] transition-colors"
+                        className="1 px-4 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#023697] transition-colors"
                      />
                      <button
                         onClick={handleSendMessage}
-                        className="w-10 h-10 bg-linear-to-br from-[#65e472] to-[#0b5313] rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg shadow-[#65e472]/20">
+                        className="w-10 h-10 bg-linear-to-br from-[#023697] to-[#001d51] rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg shadow-[#023697]/20">
                         <Send className="w-5 h-5 text-white" />
                      </button>
                   </div>

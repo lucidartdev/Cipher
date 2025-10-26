@@ -1,7 +1,8 @@
 .
 ├── app
 │   ├── components
-│   │   └── landing-page.tsx
+│   │   ├── landing-page.tsx
+│   │   └── test.tsx
 │   ├── dashboard
 │   │   └── page.tsx
 │   ├── favicon.ico
@@ -15,13 +16,19 @@
 ├── package.json
 ├── postcss.config.mjs
 ├── public
+│   ├── assets
+│   │   ├── Avtivity.png
+│   │   ├── Gas.png
+│   │   └── Warning.png
 │   ├── file.svg
+│   ├── fonts
+│   │   ├── Apestron.otf
+│   │   └── Apestron.ttf
 │   ├── globe.svg
 │   ├── next.svg
-│   ├── vercel.svg
 │   └── window.svg
 ├── README.md
 ├── structure.md
 └── tsconfig.json
 
-5 directories, 20 files
+7 directories, 25 files

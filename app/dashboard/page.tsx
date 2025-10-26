@@ -120,7 +120,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-md text-center">
-          <div className="w-20 h-20 bg-gradient-to-br from-[#65e472] to-[#0b5313] rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 bg-gradient-to-br from-[#023697] to-[#001d51] rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Wallet className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-3">Connect Your Wallet</h1>
@@ -140,7 +140,7 @@ export default function DashboardPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#65e472] to-[#0b5313] rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-[#023697] to-[#001d51] rounded-xl flex items-center justify-center">
                 <Lock className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -206,7 +206,7 @@ export default function DashboardPage() {
           {/* Gas Spent Card */}
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200">
             <div className="flex items-start justify-between mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#65e472] to-[#0b5313] rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#023697] to-[#001d51] rounded-xl flex items-center justify-center">
                 <Fuel className="w-6 h-6 text-white" />
               </div>
               <span className={`flex items-center gap-1 text-sm font-medium px-2 py-1 rounded-lg ${
@@ -229,7 +229,7 @@ export default function DashboardPage() {
               {mockData.gasSpent.sparkline.map((value, idx) => (
                 <div
                   key={idx}
-                  className="flex-1 bg-gradient-to-t from-[#65e472] to-[#0b5313] rounded-t opacity-60"
+                  className="flex-1 bg-gradient-to-t from-[#023697] to-[#001d51] rounded-t opacity-60"
                   style={{ height: `${(value / Math.max(...mockData.gasSpent.sparkline)) * 100}%` }}
                 />
               ))}
@@ -287,7 +287,7 @@ export default function DashboardPage() {
             </p>
             <button
               onClick={() => setApprovalsExpanded(true)}
-              className="mt-4 w-full bg-gradient-to-r from-[#65e472] to-[#0b5313] text-white py-2 rounded-xl font-medium hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
+              className="mt-4 w-full bg-gradient-to-r from-[#023697] to-[#001d51] text-white py-2 rounded-xl font-medium hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
             >
               Review Now
             </button>
@@ -308,7 +308,7 @@ export default function DashboardPage() {
                   onClick={() => setChartPeriod(period)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     chartPeriod === period
-                      ? 'bg-gradient-to-r from-[#65e472] to-[#0b5313] text-white shadow-md'
+                      ? 'bg-gradient-to-r from-[#023697] to-[#001d51] text-white shadow-md'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
@@ -328,7 +328,7 @@ export default function DashboardPage() {
                 <div key={idx} className="flex-1 flex flex-col items-center gap-2">
                   <div className="w-full relative group">
                     <div
-                      className="w-full bg-gradient-to-t from-[#65e472] to-[#0b5313] rounded-t-lg transition-all duration-300 hover:opacity-80 cursor-pointer"
+                      className="w-full bg-gradient-to-t from-[#023697] to-[#001d51] rounded-t-lg transition-all duration-300 hover:opacity-80 cursor-pointer"
                       style={{ height: `${height * 2}px` }}
                     />
                     {/* Tooltip */}
@@ -348,7 +348,7 @@ export default function DashboardPage() {
           {/* Transaction Breakdown */}
           <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
             <div className="flex items-center gap-3 mb-6">
-              <BarChart3 className="w-5 h-5 text-[#65e472]" />
+              <BarChart3 className="w-5 h-5 text-[#023697]" />
               <h2 className="text-lg font-bold text-gray-900">Transaction Breakdown</h2>
             </div>
             
@@ -392,7 +392,7 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            <button className="w-full flex items-center justify-center gap-2 py-3 border-2 border-gray-200 rounded-xl text-gray-600 font-medium hover:border-[#65e472] hover:text-[#65e472] transition-all duration-200">
+            <button className="w-full flex items-center justify-center gap-2 py-3 border-2 border-gray-200 rounded-xl text-gray-600 font-medium hover:border-[#023697] hover:text-[#023697] transition-all duration-200">
               View All Transactions
               <ArrowUpRight className="w-4 h-4" />
             </button>
@@ -401,7 +401,7 @@ export default function DashboardPage() {
           {/* Recent Activity */}
           <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
             <div className="flex items-center gap-3 mb-6">
-              <Activity className="w-5 h-5 text-[#65e472]" />
+              <Activity className="w-5 h-5 text-[#023697]" />
               <h2 className="text-lg font-bold text-gray-900">Recent Activity</h2>
             </div>
 
@@ -409,7 +409,7 @@ export default function DashboardPage() {
               {mockData.recentTransactions.map((tx) => (
                 <div
                   key={tx.id}
-                  className="group p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 cursor-pointer border border-transparent hover:border-[#65e472]"
+                  className="group p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 cursor-pointer border border-transparent hover:border-[#023697]"
                 >
                   <div className="flex items-start gap-3">
                     <div className="text-2xl">{tx.icon}</div>
@@ -436,7 +436,7 @@ export default function DashboardPage() {
               ))}
             </div>
 
-            <button className="w-full flex items-center justify-center gap-2 py-3 mt-4 border-2 border-gray-200 rounded-xl text-gray-600 font-medium hover:border-[#65e472] hover:text-[#65e472] transition-all duration-200">
+            <button className="w-full flex items-center justify-center gap-2 py-3 mt-4 border-2 border-gray-200 rounded-xl text-gray-600 font-medium hover:border-[#023697] hover:text-[#023697] transition-all duration-200">
               View All Activity
               <ArrowUpRight className="w-4 h-4" />
             </button>
@@ -584,7 +584,7 @@ export default function DashboardPage() {
       {/* AI Chat Panel (Slide-in) */}
       {showChat && (
         <div className="fixed inset-y-0 right-0 w-full sm:w-96 bg-white shadow-2xl z-50 flex flex-col">
-          <div className="bg-gradient-to-r from-[#65e472] to-[#0b5313] p-4 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-[#023697] to-[#001d51] p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-white" />
@@ -631,9 +631,9 @@ export default function DashboardPage() {
               <input
                 type="text"
                 placeholder="Ask me anything..."
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#65e472] focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#023697] focus:border-transparent"
               />
-              <button className="px-6 py-3 bg-gradient-to-r from-[#65e472] to-[#0b5313] text-white rounded-xl font-medium hover:shadow-lg transition-all duration-200">
+              <button className="px-6 py-3 bg-gradient-to-r from-[#023697] to-[#001d51] text-white rounded-xl font-medium hover:shadow-lg transition-all duration-200">
                 <Send className="w-5 h-5" />
               </button>
             </div>
