@@ -13,22 +13,28 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-const myFont = localFont({
+
+const apestron = localFont({
   src: [
     {
-      path: "../public/fonts/Apestron.otf", 
+      path: "../public/fonts/Apestron.ttf", 
       weight: "400",
       style: "normal",
     },
-    
-        {
-      path: "../public/fonts/Apestron.otf", 
+    {
+      path: "../public/fonts/Apestron.ttf", 
       weight: "700",
       style: "normal",
     },
-   
   ],
-  variable: "--font-myfont", 
+  variable: "--font-apestron", 
+});
+
+// Yapari Variable Font (Recommended - single file for all weights)
+const yapari = localFont({
+  src: "../public/fonts/Yapari-Free-font/Yapari-Variable-Trial/Yapari-Variable-Trial-VF.ttf",
+  variable: "--font-yapari",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -44,14 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-  className={` ${myFont.variable} antialiased`}
->
-      
-          <Providers>{children}</Providers>
+        className={`${apestron.variable} ${yapari.variable} antialiased`}
+      >
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
 }
-
-
- 

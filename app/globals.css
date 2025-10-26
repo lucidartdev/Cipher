@@ -1,21 +1,19 @@
 @import "tailwindcss";
 
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717; 
   --color-cipher-primary: #023697;
   --color-cipher-secondary: #010a1a;
   --color-cipher-tertiary: #21014b;
-  --color-cipher-secondary: #023697;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--color-cipher-secondary);
-  --font-sans: var(--font-myfont);
-  --font-mono: var(--font-myfont);
+  --font-sans: var(--font-yapari);
+  --font-mono: var(--font-geist-mono);
+  --font-apestron: var(--font-apestron);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,11 +22,18 @@
     --foreground: #ededed;
   }
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-myfont);
+  font-family: var(--font-yapari), sans-serif;
+}
+p{
+    /* font-family: var(--font-apestron); */
+    letter-spacing: 0.05em;
+    font-size: 0.75em;
 }

@@ -59,7 +59,7 @@ export default function CipherLanding() {
 
          {/* linear Orbs */}
          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 -left-20 w-96 h-96 bg-[#023697] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+             <div className="absolute top-20 -left-20 w-96 h-96 bg-[#023697] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
             <div
                className="absolute top-40 -right-20 w-96 h-96 bg-[#001d51] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
                style={{ animationDelay: "1s" }}></div>
@@ -76,9 +76,7 @@ export default function CipherLanding() {
             {/* Navigation */}
             <nav className="container mx-auto px-6 py-6 flex items-center justify-between border-b border-gray-100">
                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-linear-to-br from-[#023697] to-[#001d51] rounded-xl flex items-center justify-center shadow-lg shadow-[#023697]/20">
-                     <span className="text-xl font-bold text-white">C</span>
-                  </div>
+                    <img src="/Cipher.png" alt="Logo" className="w-12 h-12 object-contain" />
                   <span className="text-2xl font-bold text-gray-900">
                      CIPHER
                   </span>
@@ -140,16 +138,16 @@ export default function CipherLanding() {
 
                   {/* Main Headline */}
                   <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
-                     
-                     
+                     Your Wallet's
                      <br />
                      <span className="bg-linear-to-r from-[#023697] via-[#001d51] to-[#023697] bg-clip-text text-transparent">
                         Personal Analyst
                      </span>
                   </h1>
 
-                  <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                     CIPHER translates your blockchain transactions into plain
+                  <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                     
+                       <span className="bg-linear-to-r from-[#023697] via-[#001d51] to-[#023697] bg-clip-text text-transparent">CIPHER</span> translates your blockchain transactions into plain
                      English insights.
                      <br />
                      Track spending, detect risks, and understand your crypto
