@@ -22,7 +22,7 @@ export default function CipherLanding() {
    const [messages, setMessages] = useState([
       {
          type: "bot",
-         text: "Hi! I'm CIPHER AI. Ask me about your wallet activity, gas fees, or security risks, I can help you .",
+         text: "Hi! I'm CIPHER AI. Ask me about your wallet activity, gas fees, or security risks.",
       },
    ]);
    const [inputValue, setInputValue] = useState("");
