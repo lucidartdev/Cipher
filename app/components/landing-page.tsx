@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import { useAppKit, useAppKitAccount } from '@reown/appkit/react';
+import { useAppKit } from '@reown/appkit/react';
 import { useRouter } from 'next/navigation';
 import { useAccount } from 'wagmi';
 import {
@@ -17,7 +17,8 @@ import {
 
 export default function CipherLanding() {
    const router = useRouter();
-   const { isConnected } = useAccount();
+   const { isConnected, address } = useAccount();
+   const { open } = useAppKit();
    const [isChatOpen, setIsChatOpen] = useState(false);
    const [messages, setMessages] = useState([
       {
@@ -94,27 +95,12 @@ export default function CipherLanding() {
                   )}
 
                   {/* Connect Wallet Button */}
-                  <ConnectButton.Custom>
-                     {({
-                        account,
-                        chain,
-                        openAccountModal,
-                        openChainModal,
-                        openConnectModal,
-                        mounted,
-                     }) => {
-                        const connected = mounted && account && chain;
-                        
-                        return (
-                           <button
-                              onClick={connected ? openAccountModal : openConnectModal}
-                              className="bg-linear-to-r from-[#023697] to-[#001d51] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#023697]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
-                           >
-                              {connected ? `${account.displayName}` : 'Connect Wallet'}
-                           </button>
-                        );
-                     }}
-                  </ConnectButton.Custom>
+                  <button
+                     onClick={() => open()}
+                     className="bg-linear-to-r from-[#023697] to-[#001d51] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#023697]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
+                  >
+                     {isConnected && address ? `${address.slice(0, 6)}...${address.slice(-4)}` : 'Connect Wallet'}
+                  </button>
                </div>
             </nav>
 
@@ -156,23 +142,15 @@ export default function CipherLanding() {
 
                   {/* CTA Buttons */}
                   <div className="flex col sm:row items-center justify-center gap-4 mb-12">
-                     <ConnectButton.Custom>
-                        {({ openConnectModal, mounted, account }) => {
-                           const connected = mounted && account;
-                           
-                           return (
-                              <button 
-                                 onClick={connected ? () => router.push('/dashboard') : openConnectModal}
-                                 className="bg-linear-to-r from-[#023697] to-[#001d51] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#023697]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
-                              >
-                                 {connected ? 'Go to Dashboard' : 'Get Started for Free'}
-                                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
-                                    →
-                                 </span>
-                              </button>
-                           );
-                        }}
-                     </ConnectButton.Custom>
+                     <button 
+                        onClick={() => isConnected ? router.push('/dashboard') : open()}
+                        className="bg-linear-to-r from-[#023697] to-[#001d51] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#023697]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
+                     >
+                        {isConnected ? 'Go to Dashboard' : 'Get Started for Free'}
+                        <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
+                           →
+                        </span>
+                     </button>
                      <button className="bg-white border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:border-[#023697] hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
                         Watch Demo
                      </button>
