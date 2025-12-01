@@ -11,9 +11,12 @@ const projectId = '0df2c2955d4cda3dc7c8c379302187b2';
 
 const queryClient = new QueryClient();
 
+// Define networks for AppKit
+const networks = [base, baseSepolia];
+
 // Set up Wagmi adapter
 const wagmiAdapter = new WagmiAdapter({
-  chains: [base, baseSepolia],
+  networks, // Use 'networks' instead of 'chains'
   projectId,
   ssr: true,
 });
@@ -22,7 +25,7 @@ const wagmiAdapter = new WagmiAdapter({
 createAppKit({
   adapters: [wagmiAdapter],
   projectId,
-  chains: [base, baseSepolia],
+  networks, // Use 'networks' instead of 'chains'
   metadata: {
     name: 'CIPHER',
     description: 'CIPHER App',
