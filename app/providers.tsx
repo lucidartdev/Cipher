@@ -5,14 +5,15 @@ import { WagmiProvider } from 'wagmi';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 import { base, baseSepolia } from '@reown/appkit/networks'
+import type { AppKitNetwork } from '@reown/appkit/networks'
 
 // Your Reown project ID (this is your WalletConnect project ID)
 const projectId = '0df2c2955d4cda3dc7c8c379302187b2';
 
 const queryClient = new QueryClient();
 
-// Define networks for AppKit
-const networks = [base, baseSepolia];
+// Define networks for AppKit with explicit typing
+const networks = [base, baseSepolia] as [AppKitNetwork, ...AppKitNetwork[]];
 
 // Set up Wagmi adapter
 const wagmiAdapter = new WagmiAdapter({
