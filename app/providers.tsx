@@ -2,9 +2,9 @@
 
 import { createAppKit } from '@reown/appkit/react'
 import { WagmiProvider } from 'wagmi';
-import { base, baseSepolia } from 'wagmi/chains';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
+import { base, baseSepolia } from '@reown/appkit/networks'
 
 // Your Reown project ID (this is your WalletConnect project ID)
 const projectId = '0df2c2955d4cda3dc7c8c379302187b2';
@@ -16,7 +16,7 @@ const networks = [base, baseSepolia];
 
 // Set up Wagmi adapter
 const wagmiAdapter = new WagmiAdapter({
-  networks, // Use 'networks' instead of 'chains'
+  networks,
   projectId,
   ssr: true,
 });
@@ -25,7 +25,7 @@ const wagmiAdapter = new WagmiAdapter({
 createAppKit({
   adapters: [wagmiAdapter],
   projectId,
-  networks, // Use 'networks' instead of 'chains'
+  networks,
   metadata: {
     name: 'CIPHER',
     description: 'CIPHER App',
