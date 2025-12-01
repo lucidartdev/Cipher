@@ -6,8 +6,9 @@ import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 import { base, baseSepolia } from '@reown/appkit/networks'
 import type { AppKitNetwork } from '@reown/appkit/networks'
+import { walletConnect, injected } from '@wagmi/connectors'
 
-// Your Reown project ID (this is your WalletConnect project ID)
+// Your Reown project ID
 const projectId = '0df2c2955d4cda3dc7c8c379302187b2';
 
 const queryClient = new QueryClient();
@@ -15,11 +16,15 @@ const queryClient = new QueryClient();
 // Define networks for AppKit with explicit typing
 const networks = [base, baseSepolia] as [AppKitNetwork, ...AppKitNetwork[]];
 
-// Set up Wagmi adapter
+// Set up Wagmi adapter with only the connectors you need
 const wagmiAdapter = new WagmiAdapter({
   networks,
   projectId,
   ssr: true,
+  connectors: [
+    walletConnect({ projectId, showQrModal: false }),
+    injected({ shimDisconnect: true })
+  ]
 });
 
 // Create AppKit instance
@@ -30,8 +35,8 @@ createAppKit({
   metadata: {
     name: 'CIPHER',
     description: 'CIPHER App',
-    url: 'https://yourapp.com', // Update with your actual URL
-    icons: ['https://yourapp.com/icon.png'] // Update with your actual icon
+    url: 'https://yourapp.com',
+    icons: ['https://yourapp.com/icon.png']
   },
   features: {
     analytics: true,
