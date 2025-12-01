@@ -4,7 +4,7 @@ import { createAppKit } from '@reown/appkit/react'
 import { WagmiProvider } from 'wagmi';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { base, baseSepolia } from '@reown/appkit/networks'
+import { base, baseSepolia } from 'wagmi/chains';
 import type { AppKitNetwork } from '@reown/appkit/networks'
 import { walletConnect, injected } from '@wagmi/connectors'
 
